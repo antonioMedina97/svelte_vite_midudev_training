@@ -1,12 +1,16 @@
 <script>
     import Counter from "./Counter.svelte";
+    import Hello from "./Hello.svelte";
     export let name;
     export let initialCounter;
+
+    let commonProps = { initialCounter }
 
 </script>
 
 <main>
-  <Counter name={name} initialCounter={initialCounter}/>
-  <Counter name={name} initialCounter={initialCounter}/>
-  <Counter name={name} initialCounter={initialCounter}/>
+  <Hello name={name} />
+  <Counter { ... commonProps}/>
+  <Counter initialCounter={5}/>
+  <Counter initialCounter={initialCounter}/>
 </main>
